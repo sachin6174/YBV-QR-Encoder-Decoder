@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "YBV QR Encoder Decoder",
-    "description": "Read QR for debuging code.",
+    "description": "Create Encrypted QR Or Decode QR",
     "version": "1.0.0",
     "permissions": [
         "storage"
