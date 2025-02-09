@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,20 +10,21 @@
     <script src="libs/jsQR.js"></script>
     <script src="libs/qrcode.min.js"></script>
 </head>
+
 <body>
     <div class="mainbox">
         <h1 class="app-name-label">YBV QR Encoder Decoder</h1>
-        
+
         <div class="encrypt-decrypt-selection">
             <button id="makeQRButton" class="btn-1">Make QR</button>
             <button id="readQRButton" class="btn-2">Read QR</button>
         </div>
-        
+
         <!-- Make QR View -->
         <div id="makeQRView" class="view">
             <div class="text-collection" style="text-align: center;">
                 <label for="textToEncrypt" class="text-collection-label">Text to Encrypt</label><br>
-                <textarea id="textToEncrypt" rows="5" column="3" placeholder="Enter text to generate QR"></textarea>
+                <textarea id="textToEncrypt" rows="7" column="3" placeholder="Enter text to generate QR"></textarea>
             </div>
             <div class="text-collection">
                 <label for="makeEncryptionKey" class="text-collection-label">Encryption Key</label><br>
@@ -54,7 +56,7 @@
             </div>
             <div class="text-collection">
                 <label for="decodeEncryptionKey" class="text-collection-label">Decryption Password</label><br>
-                <input type="password" id="decodeEncryptionKey" placeholder="Enter encryption key" >
+                <input type="password" id="decodeEncryptionKey" placeholder="Enter encryption key">
             </div>
             <div class="password-collection">
                 <label for="decodeIterations" class="password-collection-label">Iterations</label><br>
@@ -75,4 +77,5 @@
     </div>
     <script type="module" src="popup.js"></script>
 </body>
+
 </html>

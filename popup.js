@@ -123,9 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Minify the data
-            const minifiedData = JSON.stringify(JSON.parse(textToEncrypt));
-            console.log("Minified Data:", minifiedData);
+            // Attempt to minify the data if it's valid JSON, otherwise use original text.
+            let minifiedData = textToEncrypt;
+            try {
+                minifiedData = JSON.stringify(JSON.parse(textToEncrypt));
+            } catch (e) {
+                console.warn("Input is not valid JSON, using original text.");
+            }
+            console.log("Data for QR:", minifiedData);
 
             const encryptedData = encryptPBEWithMD5AndDES(minifiedData, encryptionKey, iterations);
             if (encryptedData) {

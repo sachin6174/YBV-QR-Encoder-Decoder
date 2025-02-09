@@ -94,6 +94,34 @@ body {
     text-align: center;
 }
 
+.text-collection>#makeEncryptionKey {
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.password-collection>#makeIterations {
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.text-collection>#decodeEncryptionKey {
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.password-collection>#decodeIterations {
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 25px;
+}
+
 .result-display textarea#encryptedDecryptedData {
     width: 340px;
     border-radius: 5px;
@@ -169,8 +197,22 @@ body {
 }
 
 #qrCodeContainer {
+    width: 300px;
+    /* restrict container width */
+    height: 300px;
+    /* restrict container height */
+    margin-top: 10px;
+    overflow: hidden;
+    /* hide any overflow */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+}
+
+#generateQRButton , #downloadQRBtn {
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: white;
+    color: white;
 }

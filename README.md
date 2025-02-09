@@ -1,8 +1,8 @@
-# About Secure Text
+# About YBV QR Encode Decode
 
 ![Icon](./icons/icon128.png)
 
-YBV QRCode Decode is a chrome web extension which can help you to decrypt QR data when you will provide with the password and then the number of iterations.
+YBV QR Encode Decode is a chrome web extension which can help you to decrypt QR data when you will provide with the password and then the number of iterations.
 
 
 ### Algorithum Under the hood
@@ -16,9 +16,8 @@ Is considered outdated due to DES's limited security (56-bit key size) and has b
 
 
 ### Extension Link
-![Icon](./publishing%20extension/md1.png)
-| ![Icon](./publishing%20extension/md2.png) | ![Icon](./publishing%20extension/md3.png) |
+![Icon](./publishing%20extension/publishedss.png)
+| ![Icon](./publishing%20extension/md1.png) | ![Icon](./publishing%20extension/md2.png) |
 |:------------------------------------------:|:------------------------------------------:|
 
-[Click here to check our extension...]()
-
+[Click here to check our extension...](https://chromewebstore.google.com/detail/ybv-qr-encoder-decoder/bkfdepagfbledopemnbibcpcmainlfam)
