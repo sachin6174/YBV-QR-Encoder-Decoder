@@ -67,14 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
         decodeQRView.style.display = "block";
     });
 
-    document.getElementById('makeQRButton').addEventListener('click', function() {
+    document.getElementById('makeQRButton').addEventListener('click', function () {
         document.getElementById('makeQRButton').style.backgroundColor = '#007bff';
         document.getElementById('readQRButton').style.backgroundColor = '#4ebb78';
         document.getElementById('makeQRView').style.display = 'block';
         document.getElementById('decodeQRView').style.display = 'none';
     });
 
-    document.getElementById('readQRButton').addEventListener('click', function() {
+    document.getElementById('readQRButton').addEventListener('click', function () {
         document.getElementById('makeQRButton').style.backgroundColor = '#4ebb78';
         document.getElementById('readQRButton').style.backgroundColor = '#007bff';
         document.getElementById('makeQRView').style.display = 'none';
@@ -123,14 +123,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            const encryptedData = encryptPBEWithMD5AndDES(textToEncrypt, encryptionKey, iterations);
+            // Minify the data
+            const minifiedData = JSON.stringify(JSON.parse(textToEncrypt));
+            console.log("Minified Data:", minifiedData);
+
+            const encryptedData = encryptPBEWithMD5AndDES(minifiedData, encryptionKey, iterations);
             if (encryptedData) {
                 const qrCodeContainer = document.getElementById("qrCodeContainer");
                 qrCodeContainer.innerHTML = "";
                 new QRCode(qrCodeContainer, {
                     text: encryptedData,
-                    width: 256,
-                    height: 256,
+                    width: 500,              // increased size for high-resolution QR
+                    height: 500,             // increased size
+                    correctLevel: QRCode.CorrectLevel.L  // low error correction level
                 });
 
                 localStorage.setItem('makeEncryptionKey', encryptionKey);
@@ -234,7 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     ctx.drawImage(img, 0, 0, img.width, img.height);
 
                     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                    const qrCodeData = jsQR(imageData.data, canvas.width, canvas.height);
+                    // Specify inversionAttempts option for robust scanning
+                    const qrCodeData = jsQR(imageData.data, canvas.width, canvas.height, { inversionAttempts: "attemptBoth" });
 
                     if (qrCodeData) {
                         extractedData = qrCodeData.data;
